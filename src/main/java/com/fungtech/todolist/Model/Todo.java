@@ -9,7 +9,7 @@ public class Todo {
     @Id
     private String id;
     private String title;
-    // private String detail;
+    private String detail;
     private boolean completed = false;
 
     public Todo() {
@@ -31,13 +31,13 @@ public class Todo {
         this.title = title;
     }
 
-    // public String getDetail() {
-    //     return detail;
-    // }
+    public String getDetail() {
+        return detail;
+    }
 
-    // public void setDetail(String detail) {
-    //     this.detail = detail;
-    // }
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 
     public boolean getCompleted() {
         return completed;

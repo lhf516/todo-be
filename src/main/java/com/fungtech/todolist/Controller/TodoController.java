@@ -26,6 +26,11 @@ public class TodoController {
         return todoRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Todo getOneById(@PathVariable String id) {
+        return todoRepository.findById(id).orElseThrow();
+    }
+
     @PostMapping
     public Todo createTodo(@RequestBody Todo todo) {
         return todoRepository.save(todo);

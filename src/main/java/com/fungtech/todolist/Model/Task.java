@@ -1,25 +1,29 @@
 package com.fungtech.todolist.Model;
 
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "todos")
-public class Todo {
+import com.fungtech.todolist.Model.Base.BaseModel;
+
+@Document(collection = "tasks")
+public class Task extends BaseModel {
 
     @Id
-    private String id;
+    private UUID id = UUID.randomUUID();
     private String title;
     private String detail;
     private boolean completed = false;
 
-    public Todo() {
+    public Task() {
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
